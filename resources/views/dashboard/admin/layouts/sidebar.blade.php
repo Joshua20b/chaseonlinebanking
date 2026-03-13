@@ -20,17 +20,12 @@
                     <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
                 </ul>
             </li>
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank
-                        Page</span></a></li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i>
-                    <span>Bootstrap</span></a>
+                    <span>User</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
-                    <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
-                    <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
-
-                    <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.users.index') }}">All users</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.users.create') }}">Create user</a></li>
                 </ul>
             </li>
             <li class="menu-header">{{ config('app.name') }}</li>
@@ -44,7 +39,7 @@
                     </li>
                 </ul>
             </li>
-            
+
 
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i>
