@@ -13,8 +13,8 @@
                 <div class="search-header">
                     Histories
                 </div>
-                
-                
+
+
                 <div class="search-item">
                     <a href="#">
                         <div class="search-icon bg-danger text-white mr-3">
@@ -55,7 +55,7 @@
                             <div class="time">10 Hours Ago</div>
                         </div>
                     </a>
-                    
+
                     <a href="#" class="dropdown-item">
                         <div class="dropdown-item-avatar">
                             <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle">
@@ -107,9 +107,14 @@
                     <i class="far fa-user"></i> Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
+                        onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </form>
             </div>
         </li>
     </ul>
