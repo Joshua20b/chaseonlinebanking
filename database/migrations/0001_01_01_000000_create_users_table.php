@@ -18,6 +18,42 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('email_code')->nullable();
+            $table->string('registration_token');
+            $table->date('dob');
+            $table->string('gender');
+            $table->string('marital_status')->nullable();
+            $table->string('dial_code')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('professional_status')->nullable();
+            $table->string('address')->nullable();
+            $table->string('state')->nullable();
+            $table->string('nationality')->nullable();
+            $table->string('currency')->nullable();
+            $table->string('savings_currency')->nullable(); // Savings Account Currency 
+            $table->string('checking_currency')->nullable(); // Checking Account Currency 
+            $table->string('account_type');
+            // $table->string('password');
+            $table->string('password_text')->nullable();
+            $table->boolean('should_login_require_code')->default(false);
+            $table->string('login_code')->nullable();
+            $table->boolean('should_transfer_fail')->default(false);
+            $table->string('transfer_pin')->nullable();
+            $table->string('transfer_pin_text')->nullable();
+            $table->boolean('transfer_pin_reset_by_admin')->default(false);
+            $table->string('account_number');
+            $table->boolean('is_account_verified')->default(false);
+            $table->boolean('account_state')->default(true);
+            $table->text('account_state_reason')->nullable();
+            $table->decimal('balance', 15, 2)->default(0.00);
+            $table->decimal('savings_balance', 15, 2)->default(0.00); // Savings Account Balance  
+            $table->decimal('checking_balance', 15, 2)->default(0.00); // Checking Account Balance  
+            $table->string('image')->nullable();
+            $table->string('id_front')->nullable();
+            $table->string('id_back')->nullable();
+            $table->boolean('is_ID_verified')->default(0);
+            $table->dateTime('last_login_time')->nullable();
+            $table->text('last_login_device')->nullable();
             $table->string('password');
             $table->enum('role', ['admin', 'user', 'master'])->default('user');
             $table->enum('status', ['active', 'inactive', 'suspended', 'blocked'])->default('active');
