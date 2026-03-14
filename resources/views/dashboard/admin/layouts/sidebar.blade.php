@@ -31,10 +31,18 @@
             <li class="menu-header">{{ config('app.name') }}</li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                    <span>Generate Transaction</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.transaction.generator') }}">Generate Transaction</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
                     <span>Components</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="components-article.html">Article</a></li>
-
                     <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a>
                     </li>
                 </ul>

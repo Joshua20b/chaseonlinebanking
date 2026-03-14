@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\Admin\DashboardController;
+use App\Http\Controllers\Dashboard\Admin\TransactionGenerator;
 use App\Http\Controllers\Dashboard\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,11 @@ Route::middleware('auth', 'role:admin')->group(function () {
      * Route: /admin/users
      */
     Route::resource('user', UserController::class)->names('admin.users');
+    /**
+     * Admin Transaction Generator
+     * Route: /admin/transaction-generator
+     */
+    Route::get('/admin/transaction/generator', [TransactionGenerator::class, 'index'])->name('admin.transaction.generator');
+    Route::post('/admin/transaction/generator/single', [TransactionGenerator::class, 'generateSingleTransaction'])->name('admin.transaction.generator.single');
+    Route::post('/admin/transaction/generator/multiple', [TransactionGenerator::class, 'generateMultipleTransaction'])->name('admin.transaction.generator.multiple');
 });

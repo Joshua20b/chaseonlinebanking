@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -10,6 +11,8 @@ class DashboardController extends Controller
     {
         $data = [
             'title' => 'Admin Dashboard',
+            'countUsers' => User::where('role', 'user')->count(),
+            'countTransactions' => 0,
         ];
         return view('dashboard.admin.index', $data);
     }
