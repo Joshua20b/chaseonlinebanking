@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Dashboard\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -73,9 +76,13 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         try {
+            $user = User::findOrFail($id);
             //code...
         } catch (\Exception $e) {
-            //throw $th;
+            DB::rollBack();
+            Log::error('Error updating backend theme: ' . $e->getMessage());
+            // toastr()->error('An error occurred while updating the theme. Please try again.');
+            return back();
         }
     }
 }
